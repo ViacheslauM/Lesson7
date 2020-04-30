@@ -1,4 +1,6 @@
-﻿namespace Lesson7
+﻿using System;
+
+namespace Lesson7
 {
     internal class Employee
     {
@@ -12,5 +14,11 @@
             LastName = last;
             PassportNumber = number;
         }
+
+        public virtual void GetInfo()
+        {
+            Console.WriteLine("Employee");
+        }
+
     }
 }

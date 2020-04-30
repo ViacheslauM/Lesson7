@@ -13,8 +13,10 @@ namespace Lesson7
 
             foreach (var employee in employees)
             {
-                Console.WriteLine("First Name:{0} Last Name:{1} Passport:{2}", 
+                Console.Write("First Name:{0} Last Name:{1} Passport:{2}", 
                                     employee.FirstName, employee.LastName, employee.PassportNumber);
+                employee.GetInfo();
+
             }
         }
     }
