@@ -12,9 +12,9 @@ namespace Lesson6
             Quality = quality;
         }
 
-        public override void GetInfo()
+        public override string GetInfo()
         {
-            Console.Write(" Quality:{0}\n", Quality);
+            return " Quality:" + Quality + "\n";
         }
 
     }

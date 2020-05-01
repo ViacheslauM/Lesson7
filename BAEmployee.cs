@@ -11,9 +11,9 @@ namespace Lesson6
         {
             EnglishLevel = english;
         }
-        public override void GetInfo()
+        public override string GetInfo()
         {
-            Console.Write(" English:{0}\n", EnglishLevel);
+            return " English:" + EnglishLevel + "\n";
         }
     }
 }

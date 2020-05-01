@@ -9,18 +9,18 @@ namespace Lesson7
         {
             Company company = new Company();
 
-            company.name = "ISSoft";
+            company.Name = "ISSoft";
 
-            company.employees[0] = new DevEmployee("Bob", "Black", "AX5422", 5);
-            company.employees[1] = new QAEmployee("Grace", "Robinson", "AA5632", "Good");
-            company.employees[2] = new DevEmployee("Sam", "Black", "GG5567", 20);
-            company.employees[3] = new BAEmployee("Sonya", "Swanson", "M7689L", "Advanced");
-            company.employees[4] = new QAEmployee("Mike", "Journey", "MM9900", "Medium");
-            company.employees[5] = new QAEmployee("Lucas", "Burke", "AZ5643", "Bad");
-            company.employees[6] = new BAEmployee("Jordan", "Red", "GB4562", "Intermediate");
-            company.employees[7] = new BAEmployee("Bella", "Hopkins", "ML0985", "Advanced");
-            company.employees[8] = new DevEmployee("Marc", "Mosley", "BS7766", 40);
-            company.employees[9] = new DevEmployee("Tia", "Scott", "DO9975", 7);
+            company.Employees[0] = new DevEmployee("Bob", "Black", "AX5422", 5);
+            company.Employees[1] = new QAEmployee("Grace", "Robinson", "AA5632", "Good");
+            company.Employees[2] = new DevEmployee("Sam", "Black", "GG5567", 20);
+            company.Employees[3] = new BAEmployee("Sonya", "Swanson", "M7689L", "Advanced");
+            company.Employees[4] = new QAEmployee("Mike", "Journey", "MM9900", "Medium");
+            company.Employees[5] = new QAEmployee("Lucas", "Burke", "AZ5643", "Bad");
+            company.Employees[6] = new BAEmployee("Jordan", "Red", "GB4562", "Intermediate");
+            company.Employees[7] = new BAEmployee("Bella", "Hopkins", "ML0985", "Advanced");
+            company.Employees[8] = new DevEmployee("Marc", "Mosley", "BS7766", 40);
+            company.Employees[9] = new DevEmployee("Tia", "Scott", "DO9975", 7);
             
             company.Show();
 

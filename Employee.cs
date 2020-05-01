@@ -15,9 +15,9 @@ namespace Lesson7
             PassportNumber = number;
         }
 
-        public virtual void GetInfo()
+        public virtual string GetInfo()
         {
-            Console.WriteLine("Employee");
+            return " Employee\n";
         }
 
     }

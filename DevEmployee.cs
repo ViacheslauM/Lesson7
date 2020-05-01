@@ -11,9 +11,9 @@ namespace Lesson6
         {
             BugsCreated = bugsCreated;
         }
-        public override void GetInfo()
+        public override string GetInfo()
         {
-            Console.Write(" Bugs:{0}\n", BugsCreated);
+            return " Bugs:" + BugsCreated + "\n";
         }
 
     }
