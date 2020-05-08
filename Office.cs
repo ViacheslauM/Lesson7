@@ -1,25 +1,27 @@
-﻿namespace Lesson7
+﻿using System.Collections.Generic;
+
+namespace Lesson7
 {
     class Office
     {
         public string Address { get; private set; }
-        public Room[] Rooms { get; private set; }
+        public List<Room> Rooms { get; private set; }
 
-        public Office(string adr, Room[] rms)
+        public Office(string adr, List<Room> rms)
         {
             Address = adr;
             Rooms = rms;
         }
 
-        public double GetArea()
+        public string GetArea()
         {
-            double totalArea = 0.0;
+            var totalArea = 0.0;
             foreach (Room room in Rooms)
             {
                 totalArea += room.Width * room.Length;
             }
 
-            return totalArea;
+            return totalArea.ToString();
         }
     }
 

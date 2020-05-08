@@ -1,21 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Lesson7
 {
     internal class Company
     {
-        public Employee[] Employees { get; private set; } = new Employee[10];
-        public string Name { get; set; }
-        
-        public void Show()
-        {
-            Console.WriteLine("Company: {0}", Name);
+        public List<Employee> Employees;
+        public string Name { get; private set; }
 
+        public Office Office { get; set; }
+
+        public Company(string name, List<Employee> employees)
+        {
+            Name = name;
+            Employees = employees;
+        }
+        
+        public string GetCompanyFullInfo()
+        {
+            string companyFullInfo = $"{Name} {Office.Address} Total area: {Office.GetArea()}\n";
+            
             foreach (var employee in Employees)
             {
-                Console.Write("First Name:{0} Last Name:{1} Passport:{2}" + employee.GetInfo(), 
-                                    employee.FirstName, employee.LastName, employee.PassportNumber);
+                companyFullInfo = companyFullInfo + employee.GetInfo();
             }
+
+            return companyFullInfo;
         }
     }
 }

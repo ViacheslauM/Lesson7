@@ -2,7 +2,7 @@
 
 namespace Lesson7
 {
-    internal class Employee
+    abstract class Employee
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -15,10 +15,7 @@ namespace Lesson7
             PassportNumber = number;
         }
 
-        public virtual string GetInfo()
-        {
-            return " Employee\n";
-        }
+        public abstract string GetInfo();
 
     }
 }
