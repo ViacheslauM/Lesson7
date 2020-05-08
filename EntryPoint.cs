@@ -10,9 +10,9 @@ namespace Lesson7
         {
             List<Employee> employees = new List<Employee>
             {
-                new BAEmployee("Bob", "Black", "AX5422", "Intermediate"),
-                new QAEmployee("Bob", "Black", "AX5422", "Good"),
-                new DevEmployee("Bob", "Black", "AX5422", 10)
+                new BAEmployee("Bob", "Black", "HB4237", "Intermediate"),
+                new QAEmployee("Lynda", "Johnson", "AX5422", "Good"),
+                new DevEmployee("Mike", "Jackson", "KN9067", 10)
             };
             List<Room> rooms = new List<Room>
             {
