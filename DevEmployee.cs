@@ -13,7 +13,7 @@ namespace Lesson6
         }
         public override string GetInfo()
         {
-            return " Bugs:" + BugsCreated + "\n";
+            return $"{FirstName} {LastName} {PassportNumber} {BugsCreated} \n";
         }
 
     }

@@ -14,7 +14,7 @@ namespace Lesson6
 
         public override string GetInfo()
         {
-            return " Quality:" + Quality + "\n";
+            return $"{FirstName} {LastName} {PassportNumber} {Quality} \n";
         }
 
     }

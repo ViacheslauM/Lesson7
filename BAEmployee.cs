@@ -13,7 +13,7 @@ namespace Lesson6
         }
         public override string GetInfo()
         {
-            return " English:" + EnglishLevel + "\n";
+            return $"{FirstName} {LastName} {PassportNumber} {EnglishLevel} \n";
         }
     }
 }
