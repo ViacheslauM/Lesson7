@@ -1,31 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
+using Lesson6;
 
 namespace Lesson7
 {
     internal class Company
     {
-        public List<Employee> Employees;
+        public List<Employee> Employees { get; private set; }
         public string Name { get; private set; }
-
         public Office Office { get; set; }
 
-        public Company(string name, List<Employee> employees)
+        public Company(string name)//, List<Employee> employees)
         {
             Name = name;
-            Employees = employees;
+            Employees = new List<Employee>();
+        }
+
+        public void AddEmployee(Employee employee)
+        {
+            Employees.Add(employee);
         }
         
         public string GetCompanyFullInfo()
         {
-            string companyFullInfo = $"{Name} {Office.Address} Total area: {Office.GetArea()}\n";
+            var companyFullInfo = $"{Name} {Office.Address} Total area: {Office.GetArea()}\n";
             
             foreach (var employee in Employees)
             {
-                companyFullInfo = companyFullInfo + employee.GetInfo();
+                companyFullInfo += employee.GetInfo();
             }
 
             return companyFullInfo;
+        }
+
+        public void StartWorkingDay()
+        {
+            foreach (var employee in Employees)
+            {
+                employee.Work();
+            }
+        }
+
+        public void AssignTask(string task)
+        {
+            foreach (var employee in Employees)
+            {
+                if(employee is ITaskAssigner assigner)
+                {
+                    //assigner.AssignTask();
+                }
+            }
         }
     }
 }

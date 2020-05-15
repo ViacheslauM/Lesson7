@@ -13,7 +13,12 @@ namespace Lesson6
         }
         public override string GetInfo()
         {
-            return $"{FirstName} {LastName} {PassportNumber} {EnglishLevel} \n";
+            return $"{base.GetInfo()} {EnglishLevel}\n";
+        }
+
+        public override void Work()
+        {
+            
         }
     }
 }

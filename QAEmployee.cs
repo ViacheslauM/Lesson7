@@ -14,8 +14,12 @@ namespace Lesson6
 
         public override string GetInfo()
         {
-            return $"{FirstName} {LastName} {PassportNumber} {Quality} \n";
+            return $"{base.GetInfo()} {Quality}\n";
         }
 
+        public override void Work()
+        {
+          
+        }
     }
 }
