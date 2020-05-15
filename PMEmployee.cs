@@ -4,7 +4,7 @@ namespace Lesson6
 {
     class PMEmployee : Employee, ITaskAssigner
     {
-        public PMEmployee(string first, string last, string number, string quality) : base(first, last, number)
+        public PMEmployee(string first, string last, string number) : base(first, last, number)
         {
            
         }

@@ -10,10 +10,11 @@ namespace Lesson7
         public string Name { get; private set; }
         public Office Office { get; set; }
 
-        public Company(string name)//, List<Employee> employees)
+        public Company(string name)
         {
             Name = name;
             Employees = new List<Employee>();
+            //Office = new Office();
         }
 
         public void AddEmployee(Employee employee)
@@ -41,13 +42,13 @@ namespace Lesson7
             }
         }
 
-        public void AssignTask(string task)
+        public void AssignTask(string task)//(Employee employeeToAssignTask, string task)
         {
             foreach (var employee in Employees)
             {
                 if(employee is ITaskAssigner assigner)
                 {
-                    //assigner.AssignTask();
+                    assigner.AssignTask(task); //(employeeToAssignTask, task);
                 }
             }
         }

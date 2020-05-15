@@ -7,10 +7,14 @@ namespace Lesson7
         public string Address { get; private set; }
         public List<Room> Rooms { get; private set; }
 
-        public Office(string adr, List<Room> rms)
+        public Office(string adr)
         {
             Address = adr;
-            Rooms = rms;
+            Rooms = new List<Room>(); 
+        }
+        public void AddRoom(Room room)
+        {
+            Rooms.Add(room);
         }
 
         public string GetArea()
