@@ -1,29 +1,25 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace Lesson7
+﻿namespace Lesson7
 {
-    abstract class Employee
+    internal abstract class Employee
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
-        public string PassportNumber { get; private set; }
+        public int Age { get; private set; }
         public string Task { get; set; }
 
-        public Employee(string first, string last, string number)
+        public Employee(string first, string last, int age)
         {
             FirstName = first;
             LastName = last;
-            PassportNumber = number;
+            Age = age;
         }
 
         public virtual string GetInfo()
         {
-            return $"{FirstName} {LastName} {PassportNumber}";
+            return $"{FirstName} {LastName} {Age} {Task}";
 
         }
 
         public abstract void Work();
-
     }
 }

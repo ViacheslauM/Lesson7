@@ -42,17 +42,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgeEmployeeComparer.cs" />
     <Compile Include="BAEmployee.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="DevEmployee.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="FirstNameEmployeeComparer.cs" />
+    <Compile Include="IDeveloper.cs" />
+    <Compile Include="IManager.cs" />
     <Compile Include="ITaskAssigner.cs" />
+    <Compile Include="ITester.cs" />
+    <Compile Include="LastNameEmployeeComparer.cs" />
     <Compile Include="Office.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="PMEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QAAutomationEmployee.cs" />
+    <Compile Include="QAAutomationLead .cs" />
     <Compile Include="QAEmployee.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="RoomComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

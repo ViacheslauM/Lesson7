@@ -1,13 +1,12 @@
-﻿using System;
-using Lesson7;
+﻿using Lesson7;
 
 namespace Lesson6
 {
-    class DevEmployee : Employee
+    internal class DevEmployee : Employee, IDeveloper
     {
         public int BugsCreated { get; private set; }
 
-        public DevEmployee(string first, string last, string number, int bugsCreated) : base(first, last, number)
+        public DevEmployee(string first, string last, int age, int bugsCreated) : base(first, last, age)
         {
             BugsCreated = bugsCreated;
         }
@@ -18,7 +17,13 @@ namespace Lesson6
 
         public override void Work()
         {
-        
+        }
+
+        public int CreateBug(string task)
+        {
+            var bugsCreated = 0;
+
+            return bugsCreated;
         }
     }
 }

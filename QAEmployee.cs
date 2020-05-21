@@ -1,13 +1,12 @@
-﻿using System;
-using Lesson7;
+﻿using Lesson7;
 
 namespace Lesson6
 {
-    class QAEmployee : Employee
+    internal class QAEmployee : Employee, ITester
     {
         public string Quality { get; private set; }
         
-        public QAEmployee(string first, string last, string number, string quality) : base(first, last, number)
+        public QAEmployee(string first, string last, int age, string quality) : base(first, last, age)
         {
             Quality = quality;
         }
@@ -19,7 +18,13 @@ namespace Lesson6
 
         public override void Work()
         {
-          
+        }
+
+        public bool Test(string task)
+        {
+            bool testResult = false;
+
+            return testResult;
         }
     }
 }

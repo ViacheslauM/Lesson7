@@ -2,7 +2,7 @@
 
 namespace Lesson7
 {
-    class Office
+    internal class Office
     {
         public string Address { get; private set; }
         public List<Room> Rooms { get; private set; }
@@ -17,17 +17,18 @@ namespace Lesson7
             Rooms.Add(room);
         }
 
-        public string GetArea()
+        public string GetTotalOfficeArea()
         {
-            var totalArea = 0.0;
-            foreach (Room room in Rooms)
+            string officeFullInfo = null;
+            officeFullInfo = $"Rooms area:\n{officeFullInfo}";
+
+
+            foreach (var room in Rooms)
             {
-                totalArea += room.Width * room.Length;
+                officeFullInfo += room.GetRoomArea();
             }
 
-            return totalArea.ToString();
+            return $"{officeFullInfo}\n";
         }
     }
-
-
 }
