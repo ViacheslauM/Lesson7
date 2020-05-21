@@ -1,13 +1,12 @@
-﻿using System;
-using Lesson7;
+﻿using Lesson7;
 
 namespace Lesson6
 {
-    class BAEmployee : Employee
+    internal class BAEmployee : Employee
     {
         public string EnglishLevel { get; private set; }
 
-        public BAEmployee(string first, string last, string number, string english) : base(first, last, number)
+        public BAEmployee(string first, string last, int age, string english) : base(first, last, age)
         {
             EnglishLevel = english;
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Lesson6;
 
 namespace Lesson7
@@ -10,7 +9,7 @@ namespace Lesson7
         public string Name { get; private set; }
         public Office Office { get; set; }
 
-        public Company(string name)//, List<Employee> employees)
+        public Company(string name)
         {
             Name = name;
             Employees = new List<Employee>();
@@ -23,7 +22,8 @@ namespace Lesson7
         
         public string GetCompanyFullInfo()
         {
-            var companyFullInfo = $"{Name} {Office.Address} Total area: {Office.GetArea()}\n";
+            var companyFullInfo = $"{Name} {Office.Address}\n{Office.GetTotalOfficeArea()}\nAll Employees:\n";
+           
             
             foreach (var employee in Employees)
             {
@@ -31,6 +31,51 @@ namespace Lesson7
             }
 
             return companyFullInfo;
+        }
+
+        public string GetQAEmployees()
+        {
+            var qaEmployeeInfo = $"QA Employees:\n";
+
+            foreach (var employee in Employees)
+            {
+                if (employee is ITester)
+                {
+                    qaEmployeeInfo += (employee as Employee).GetInfo();
+                }
+            }
+
+            return qaEmployeeInfo;
+        }
+
+        public string GetDevEmployees()
+        {
+            var qaEmployeeInfo = $"Dev Employees:\n";
+
+            foreach (var employee in Employees)
+            {
+                if (employee is IDeveloper)
+                {
+                    qaEmployeeInfo += (employee as Employee).GetInfo();
+                }
+            }
+
+            return qaEmployeeInfo;
+        }
+
+        public string GetTaskAssigners()
+        {
+            var qaEmployeeInfo = $"Task Assigners:\n";
+
+            foreach (var employee in Employees)
+            {
+                if (employee is ITaskAssigner)
+                {
+                    qaEmployeeInfo += (employee as Employee).GetInfo();
+                }
+            }
+
+            return qaEmployeeInfo;
         }
 
         public void StartWorkingDay()
@@ -47,7 +92,14 @@ namespace Lesson7
             {
                 if(employee is ITaskAssigner assigner)
                 {
-                    //assigner.AssignTask();
+                    foreach (var employeeWithTask in Employees)
+                    {
+                        if (employeeWithTask.Task == null)
+                        {
+                            assigner.AssignTask(employeeWithTask, task);
+                            break;
+                        }
+                    }
                 }
             }
         }

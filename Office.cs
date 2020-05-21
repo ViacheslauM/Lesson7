@@ -2,28 +2,33 @@
 
 namespace Lesson7
 {
-    class Office
+    internal class Office
     {
         public string Address { get; private set; }
         public List<Room> Rooms { get; private set; }
 
-        public Office(string adr, List<Room> rms)
+        public Office(string adr)
         {
             Address = adr;
-            Rooms = rms;
+            Rooms = new List<Room>(); 
+        }
+        public void AddRoom(Room room)
+        {
+            Rooms.Add(room);
         }
 
-        public string GetArea()
+        public string GetTotalOfficeArea()
         {
-            var totalArea = 0.0;
-            foreach (Room room in Rooms)
+            string officeFullInfo = null;
+            officeFullInfo = $"Rooms area:\n{officeFullInfo}";
+
+
+            foreach (var room in Rooms)
             {
-                totalArea += room.Width * room.Length;
+                officeFullInfo += room.GetRoomArea();
             }
 
-            return totalArea.ToString();
+            return $"{officeFullInfo}\n";
         }
     }
-
-
 }

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Lesson6;
 
 namespace Lesson7
@@ -8,27 +7,36 @@ namespace Lesson7
     {
         private static void Main(string[] args)
         {
-            List<Room> rooms = new List<Room>
-            {
-                new Room(50.5, 24.7),
-                new Room(54.8, 20.36)
-            };
 
-            Company company = new Company("ISSoft")
+        var company = new Company("ISSoft")
             {
-                Office = new Office("Gurskogo 44", rooms)
+                Office = new Office("Gurskogo 44")
             };
-            company.AddEmployee(new BAEmployee("Bob", "Black", "HB4237", "Intermediate"));
-            company.AddEmployee(new QAEmployee("Lynda", "Johnson", "AX5422", "Good"));
+            company.Office.AddRoom(new Room(20.2, 16.9));
+            company.Office.AddRoom(new Room(10.0, 11.4));
+            company.Office.AddRoom(new Room(15.5, 18.9));
+            
 
-            Console.WriteLine(company.GetCompanyFullInfo());  
+            company.AddEmployee(new BAEmployee("Lynda", "Black", 31, "Intermediate"));
+            company.AddEmployee(new QAEmployee("Bob", "Johnson", 25, "Good"));
+            company.AddEmployee(new DevEmployee("Max", "Payne", 42, 10));
+            company.AddEmployee(new PMEmployee("Jack", "Dow", 30));
+        
+
+            company.AssignTask("NewTask");
+            company.AssignTask("NewTask1");
+            company.AssignTask("NewTask2");
+
+            company.Employees.Sort(new AgeEmployeeComparer());
+            company.Office.Rooms.Sort(new RoomComparer());
 
             company.StartWorkingDay();
 
+            Console.WriteLine(company.GetCompanyFullInfo());
+
+            Console.WriteLine(company.GetQAEmployees());
+            Console.WriteLine(company.GetDevEmployees());
+            Console.WriteLine(company.GetTaskAssigners());
         }
     }
-
-
-
-
 }

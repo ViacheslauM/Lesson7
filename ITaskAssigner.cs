@@ -2,7 +2,7 @@
 
 namespace Lesson6
 {
-    interface ITaskAssigner
+    internal interface ITaskAssigner
     {
         void AssignTask(Employee employee, string task);
         void EstimateTask(string task);
