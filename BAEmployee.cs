@@ -6,7 +6,7 @@ namespace Lesson6
     {
         public string EnglishLevel { get; private set; }
 
-        public BAEmployee(string first, string last, int age, string english) : base(first, last, age)
+        public BAEmployee(string first, string last, int age, string passportNumber, string english) : base(first, last, age, passportNumber)
         {
             EnglishLevel = english;
         }

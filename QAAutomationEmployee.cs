@@ -4,7 +4,7 @@ namespace Lesson6
 {
     internal class QAAutomationEmployee : Employee, ITester, IDeveloper
     {
-        public QAAutomationEmployee(string first, string last, int age, string quality) : base(first, last, age)
+        public QAAutomationEmployee(string first, string last, int age, string passportNumber, string quality) : base(first, last, age, passportNumber)
         {
         }
 

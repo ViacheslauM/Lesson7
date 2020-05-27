@@ -17,10 +17,10 @@ namespace Lesson7
             company.Office.AddRoom(new Room(15.5, 18.9));
             
 
-            company.AddEmployee(new BAEmployee("Lynda", "Black", 31, "Intermediate"));
-            company.AddEmployee(new QAEmployee("Bob", "Johnson", 25, "Good"));
-            company.AddEmployee(new DevEmployee("Max", "Payne", 42, 10));
-            company.AddEmployee(new PMEmployee("Jack", "Dow", 30));
+            company.AddEmployee(new BAEmployee("Lynda", "Black", 31, "MX1762", "Intermediate"));
+            company.AddEmployee(new QAEmployee("Bob", "Johnson", 25, "AP9987" ,"Good"));
+            company.AddEmployee(new DevEmployee("Max", "Payne", 42, "FR7263", 10));
+            company.AddEmployee(new PMEmployee("Jack", "Dow", 30, "TI5521"));
         
 
             company.AssignTask("NewTask");
@@ -30,7 +30,10 @@ namespace Lesson7
             company.Employees.Sort(new AgeEmployeeComparer());
             company.Office.Rooms.Sort(new RoomComparer());
 
-            company.StartWorkingDay();
+            //company.StartWorkingDay();
+
+            //company.DoHoliday();
+            company.GetEmployeeStatistics();
 
             Console.WriteLine(company.GetCompanyFullInfo());
 

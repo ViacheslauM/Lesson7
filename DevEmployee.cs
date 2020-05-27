@@ -6,7 +6,7 @@ namespace Lesson6
     {
         public int BugsCreated { get; private set; }
 
-        public DevEmployee(string first, string last, int age, int bugsCreated) : base(first, last, age)
+        public DevEmployee(string first, string last, int age, string passportNumber, int bugsCreated) : base(first, last, age, passportNumber)
         {
             BugsCreated = bugsCreated;
         }

@@ -55,6 +55,7 @@
     <Compile Include="LastNameEmployeeComparer.cs" />
     <Compile Include="Office.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="PassportChecker.cs" />
     <Compile Include="PMEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QAAutomationEmployee.cs" />

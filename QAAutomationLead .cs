@@ -4,7 +4,7 @@ namespace Lesson6
 {
     class QAAutomationLead : Employee, IDeveloper, ITester, ITaskAssigner
     {
-        public QAAutomationLead(string first, string last, int age, string quality) : base(first, last, age)
+        public QAAutomationLead(string first, string last, int age, string passportNumber, string quality) : base(first, last, age, passportNumber)
         {
         }
         public override void Work()

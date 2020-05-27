@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Lesson6;
 
 namespace Lesson7
@@ -8,6 +9,9 @@ namespace Lesson7
         public List<Employee> Employees { get; private set; }
         public string Name { get; private set; }
         public Office Office { get; set; }
+
+        //public delegate void InformationCheck();
+        // public delegate int InformationCheck(int information);
 
         public Company(string name)
         {
@@ -102,6 +106,63 @@ namespace Lesson7
                     }
                 }
             }
+        }
+
+        public void GetEmployeeStatistics()
+        {
+            PassportChecker checker = new PassportChecker();
+            //int count = 0;
+            foreach (var employee in Employees)
+            {
+                employee.BringThePassport(checker.CheckPassport);
+                //count++;
+            }
+        }
+
+
+        public void DoHoliday()
+        {
+            foreach (var employee in Employees)
+            {
+                if (employee.FirstName == "Lynda")
+                {
+                    employee.DoSocialJob(PrepareBalloons);
+                }
+                else if (employee.FirstName == "Bob")
+                {
+                    employee.DoSocialJob(PrepareCups);
+                }
+                else
+                {
+                    employee.DoSocialJob(PrepareFlowers);
+                }
+                
+            }
+        }
+
+        //public int GetEmployeeStatistics(InformationCheck informationCheck)
+        //{
+        //    PassportChecker checker = new PassportChecker();
+        //    int count = 0;
+        //    foreach (var employee in Employees)
+        //    {
+        //        informationCheck?.Invoke(checker.CheckPassportNumber(employee.PassportNumber));
+        //        count++;
+        //    }
+        //    return count;
+        //}
+
+        static void PrepareBalloons()
+        {
+            Console.WriteLine("Balloons are prepared");
+        }
+        static void PrepareCups()
+        {
+            Console.WriteLine("Cups are prepared");
+        }
+        static void PrepareFlowers()
+        {
+            Console.WriteLine("Flowers are prepared");
         }
     }
 }

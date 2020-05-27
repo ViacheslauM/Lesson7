@@ -6,7 +6,7 @@ namespace Lesson6
     {
         public string Quality { get; private set; }
         
-        public QAEmployee(string first, string last, int age, string quality) : base(first, last, age)
+        public QAEmployee(string first, string last, int age, string passportNumber, string quality) : base(first, last, age,passportNumber)
         {
             Quality = quality;
         }
