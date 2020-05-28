@@ -44,7 +44,7 @@ namespace Lesson7
             Console.WriteLine(company.GetDevEmployees());
             Console.WriteLine(company.GetTaskAssigners());
 
-            Console.WriteLine($"Employees with the \"1\" letter in Passport: {company.GetEmployeeStatistics()}");
+            Console.WriteLine($"Employees with the \"1\" letter in Passport: {company.GetEmployeePassportStatistics()}");
 
         }
 

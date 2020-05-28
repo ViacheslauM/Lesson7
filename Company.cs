@@ -107,7 +107,7 @@ namespace Lesson7
             }
         }
 
-        public int GetEmployeeStatistics()
+        public int GetEmployeePassportStatistics()
         {
             PassportChecker checker = new PassportChecker();
             int count = 0;
