@@ -1,7 +1,4 @@
-﻿using System;
-using Lesson6;
-
-namespace Lesson7
+﻿namespace Lesson7
 {
     abstract class Employee
     {
@@ -11,8 +8,10 @@ namespace Lesson7
         public string PassportNumber { get; private set; }
         public string Task { get; set; }
 
-        public delegate void SocialActivity();
-        public delegate void InformationCheck();
+        //public delegate void SocialActivity();
+        public delegate bool InformationCheck(string text);
+
+        //public SocialActivity MyActivity { get; set; }
 
         public Employee(string first, string last, int age, string passportNumber)
         {
@@ -30,14 +29,14 @@ namespace Lesson7
 
         public abstract void Work();
 
-        public void DoSocialJob(SocialActivity activity)
-        {
-            activity.Invoke();
-        }
+        //public void DoSocialJob()
+        //{
+        //    MyActivity?.Invoke();
+        //}
 
-        public void BringThePassport(InformationCheck check)
+        public bool BringThePassport(InformationCheck check)
         {
-            check.Invoke();
+            return check.Invoke(this.PassportNumber);
         }
 
     }

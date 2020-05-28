@@ -5,6 +5,7 @@ namespace Lesson7
 {
     internal class EntryPoint
     {
+
         private static void Main(string[] args)
         {
 
@@ -17,11 +18,14 @@ namespace Lesson7
             company.Office.AddRoom(new Room(15.5, 18.9));
             
 
-            company.AddEmployee(new BAEmployee("Lynda", "Black", 31, "MX1762", "Intermediate"));
-            company.AddEmployee(new QAEmployee("Bob", "Johnson", 25, "AP9987" ,"Good"));
-            company.AddEmployee(new DevEmployee("Max", "Payne", 42, "FR7263", 10));
-            company.AddEmployee(new PMEmployee("Jack", "Dow", 30, "TI5521"));
-        
+            company.AddEmployee(new BAEmployee("Lynda", "Black", 31, "XM1767", "Intermediate"));
+            company.AddEmployee(new QAEmployee("Bob", "Johnson", 25, "AP9187", "Good"));
+            company.AddEmployee(new DevEmployee("Max", "Payne", 42, "FR72634", 10));
+            company.AddEmployee(new PMEmployee("Jack", "Dow", 30, "M1517"));
+
+            //company.Employees[0].MyActivity = PrepareBalloons;
+            //company.Employees[1].MyActivity = PrepareCups;
+            //company.Employees[2].MyActivity = PrepareFlowers;
 
             company.AssignTask("NewTask");
             company.AssignTask("NewTask1");
@@ -33,13 +37,29 @@ namespace Lesson7
             //company.StartWorkingDay();
 
             //company.DoHoliday();
-            company.GetEmployeeStatistics();
 
             Console.WriteLine(company.GetCompanyFullInfo());
 
             Console.WriteLine(company.GetQAEmployees());
             Console.WriteLine(company.GetDevEmployees());
             Console.WriteLine(company.GetTaskAssigners());
+
+            Console.WriteLine($"Employees with the \"1\" letter in Passport: {company.GetEmployeeStatistics()}");
+
         }
+
+        //static void PrepareBalloons()
+        //{
+        //    Console.WriteLine("Balloons are prepared");
+        //}
+        //static void PrepareCups()
+        //{
+        //    Console.WriteLine("Cups are prepared");
+        //}
+        //static void PrepareFlowers()
+        //{
+        //    Console.WriteLine("Flowers are prepared");
+        //}
+
     }
 }

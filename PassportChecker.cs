@@ -1,31 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Linq;
-using Lesson7;
-
-namespace Lesson6
+﻿namespace Lesson6
 {
     class PassportChecker
     {
-        public int CheckPassportNumber(string passportNumber)
+        public bool CheckPassportNumber(string passportNumber)
         {
-            var count = 0;
+            var result = false;
             foreach (var letter in passportNumber)
             {
-                if (letter.Equals("1"))
+                if (letter == '1') //check Employees with the "1" letter in passport
                 {
-                    count++;
+                    result = true;
+                    break;
                 }
             }
+           
+            return result;
+        }
 
-            return count;
-        }
-        public void CheckPassport()
-        {
-            Console.WriteLine("hello");
-        }
     }
 }
