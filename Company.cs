@@ -126,7 +126,7 @@ namespace Lesson6
         public List<string> GetEmployeesLastname() //get list of employee lastnames where employees are ITaskAssigners and the age is < 35
         {
             return this.Employees.Where(x => x is ITaskAssigner).Where(y => y.Age < 35)
-                .Select(z => z.LastName).ToList();
+                                                                       .Select(z => z.LastName).ToList();
 
         }
 
