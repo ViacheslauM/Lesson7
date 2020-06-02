@@ -1,7 +1,7 @@
 using System;
-using Lesson6;
+using  System.Linq;
 
-namespace Lesson7
+namespace Lesson6
 {
     internal class EntryPoint
     {
@@ -22,6 +22,7 @@ namespace Lesson7
             company.AddEmployee(new QAEmployee("Bob", "Johnson", 25, "AP9187", "Good"));
             company.AddEmployee(new DevEmployee("Max", "Payne", 42, "FR72634", 10));
             company.AddEmployee(new PMEmployee("Jack", "Dow", 30, "M1517"));
+            company.AddEmployee(new QAAutomationLead("Jim", "Swanson", 30, "R7662", "Good"));
 
             //company.Employees[0].MyActivity = PrepareBalloons;
             //company.Employees[1].MyActivity = PrepareCups;
@@ -44,7 +45,16 @@ namespace Lesson7
             Console.WriteLine(company.GetDevEmployees());
             Console.WriteLine(company.GetTaskAssigners());
 
-            Console.WriteLine($"Employees with the \"1\" letter in Passport: {company.GetEmployeePassportStatistics()}");
+            Console.WriteLine($"Employees with the \"1\" letter in Passport: {company.GetEmployeePassportStatistics()}\n");
+
+
+            foreach (var employeeLastname in company.GetEmployeesLastname()) 
+            {
+                Console.WriteLine(employeeLastname);   
+            }
+
+            
+
 
         }
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lesson7
+namespace Lesson6
 {
     internal class Office
     {

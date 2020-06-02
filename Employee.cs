@@ -1,4 +1,4 @@
-﻿namespace Lesson7
+﻿namespace Lesson6
 {
     abstract class Employee
     {

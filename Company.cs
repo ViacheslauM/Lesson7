@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Lesson6;
+using System.Linq;
 
-namespace Lesson7
+namespace Lesson6
 {
     internal class Company
     {
@@ -109,8 +109,8 @@ namespace Lesson7
 
         public int GetEmployeePassportStatistics()
         {
-            PassportChecker checker = new PassportChecker();
-            int count = 0;
+            var checker = new PassportChecker();
+            var count = 0;
 
             foreach (var employee in Employees)
             {
@@ -118,19 +118,25 @@ namespace Lesson7
                {
                     count++;
                }
-
             }
 
             return count;
         }
 
+        public List<string> GetEmployeesLastname() //get list of employee lastnames where employees are ITaskAssigners and the age is < 35
+        {
+            return this.Employees.Where(x => x is ITaskAssigner).Where(y => y.Age < 35)
+                .Select(z => z.LastName).ToList();
 
-        //public void DoHoliday()
-        //{
-        //    foreach (var employee in Employees)
-        //    {
-        //        employee.DoSocialJob();
-        //    }
-        //}
-    }
+        }
+
+
+    //public void DoHoliday()
+    //{
+    //    foreach (var employee in Employees)
+    //    {
+    //        employee.DoSocialJob();
+    //    }
+    //}
+}
 }

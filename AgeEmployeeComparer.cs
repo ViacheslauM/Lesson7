@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Lesson7;
 
 namespace Lesson6
 {

@@ -1,6 +1,4 @@
-﻿using Lesson7;
-
-namespace Lesson6
+﻿namespace Lesson6
 {
     class QAAutomationLead : Employee, IDeveloper, ITester, ITaskAssigner
     {

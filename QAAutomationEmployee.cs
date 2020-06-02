@@ -1,6 +1,4 @@
-﻿using Lesson7;
-
-namespace Lesson6
+﻿namespace Lesson6
 {
     internal class QAAutomationEmployee : Employee, ITester, IDeveloper
     {
